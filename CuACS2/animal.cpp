@@ -5,15 +5,15 @@ Animal::Animal()
 
 }
 
-Animal::Animal(int id, QString type, QString breed, QString age, QString size, QString colour, QString weight)
+Animal::Animal(int i, QString t, QString b, QString a, QString s, QString c, QString w)
 {
-    id = id;
-    type = type;
-    breed = breed;
-    age = age;
-    size = size;
-    colour = colour;
-    weight = weight;
+    id = i;
+    type = t;
+    breed = b;
+    age = a;
+    size = s;
+    colour = c;
+    weight = w;
 }
 
 Animal::~Animal()

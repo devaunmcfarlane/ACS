@@ -2,6 +2,7 @@
 #define STAFF_H
 
 #include <QString>
+#include <QDebug>
 
 class Staff
 {

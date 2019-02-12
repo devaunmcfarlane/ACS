@@ -9,7 +9,6 @@ public:
     AnimalArray();
     ~AnimalArray();
     bool addAnimal(Animal*);
-    bool removeAnimal(int);
     Animal* getAnimal(int);
     bool setAnimal(int,Animal*);
     int getSize();

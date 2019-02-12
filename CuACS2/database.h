@@ -18,7 +18,9 @@ public:
     QSqlQuery getAllAnimals();
     QSqlQuery getAllClients();
     QSqlQuery getAllStaff();
-    void deleteData();
+    void deleteDataAnimals();
+    void deleteDataStaff();
+    void deleteDataClients();
     void addAnimal(int id, QString type, QString breed, QString age, QString size, QString colour, QString weight);
     void addStaff(int id, QString name, QString password);
 };

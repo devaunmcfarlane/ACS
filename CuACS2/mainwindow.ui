@@ -1,24 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>791</width>
+    <height>533</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>351</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>60</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>CuACS</string>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>771</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="mainLoginPage">
+     <widget class="QPushButton" name="staffLoginButton">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>100</y>
+        <width>171</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Staff Login</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clientLoginButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>100</y>
+        <width>171</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Client Login</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="staffLoginPage">
+     <widget class="QLabel" name="staffLoginLabel">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>20</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Staff Login</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="staffIdLabel">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>116</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Staff Id</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="staffPasswordLabel">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>150</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="staffIdInput">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>109</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="staffPasswordInput">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>144</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="staffLoginButton_2">
+      <property name="geometry">
+       <rect>
+        <x>469</x>
+        <y>190</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="badLoginLabel">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>80</y>
+        <width>241</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Wrong Id or password.  Please try again.</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="staffPortalMainPage">
+     <widget class="QLabel" name="sPortalMainLabel">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>10</y>
+        <width>231</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Staff Portal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sPortalAddAnimal">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>120</y>
+        <width>191</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Animal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sPortalViewAnimals">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>120</y>
+        <width>191</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>View Animals</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="viewAnimalsPage">
+     <widget class="QPushButton" name="backToStaffPortal">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>310</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="SummaryTable">
+      <property name="geometry">
+       <rect>
+        <x>-5</x>
+        <y>1</y>
+        <width>791</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="columnCount">
+       <number>7</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>109</number>
+      </attribute>
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>50</number>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Animal Id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Breed</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Age</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Size</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Colour</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Weight</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="addAnimalPage">
+     <widget class="QLineEdit" name="addAnimalType">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>90</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="addAnimalBreed">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>90</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="addAnimalAge">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>90</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="addAnimalWeight">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>170</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="addAnimalSize">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>170</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="addAnimalColour">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>170</y>
+        <width>113</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="addAnimalTypeLabel">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>70</y>
+        <width>64</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="addAnimalBreedLabel">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>70</y>
+        <width>64</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Breed</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="addAnimalAgeLabel">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>70</y>
+        <width>64</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Age</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="addAnimalSizeLabel">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>150</y>
+        <width>64</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Size</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="addAnimalColourLabel">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>150</y>
+        <width>64</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Colour</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="addAnimalWeightLabel">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>150</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Weight (lbs)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addAnimalButton">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>240</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Animal</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addAnimalBackButton">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>300</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="typeNotInputed">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>120</y>
+        <width>131</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Please enter type.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="breedNotInputed">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>120</y>
+        <width>141</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Please enter breed.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ageNotInputed">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>120</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Please enter age.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sizeNotInputed">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>200</y>
+        <width>131</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Please enter size.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="weightNotInputed">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>200</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Please enter weight.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="colourNotInputed">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>200</y>
+        <width>141</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 41, 41);</string>
+      </property>
+      <property name="text">
+       <string>Please enter colour.</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>

@@ -14,11 +14,6 @@ bool AnimalArray::addAnimal(Animal* a)
     return true;
 }
 
-bool AnimalArray::removeAnimal(int i)
-{
-
-}
-
 int AnimalArray::getSize()
 {
     return size;
@@ -42,3 +37,4 @@ bool AnimalArray::setAnimal(int i,Animal* a) {
     elements[i] = a;
     return true;
 }
+

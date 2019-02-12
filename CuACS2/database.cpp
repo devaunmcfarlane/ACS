@@ -20,6 +20,23 @@ void database::initializeDatabase(QSqlDatabase db) {
    QSqlQuery qry;
    //  creating tables within database
 
+   /*
+   qry.prepare("DELETE FROM animals");
+   if(!qry.exec()) {
+       qDebug() << "Deleting Error: " << qry.lastError().text();
+   }
+   else {
+       qDebug() << "Deleted Animals";
+   }
+   qry.prepare("DELETE FROM staff");
+   if(!qry.exec()) {
+       qDebug() << "Deleting Error: " << qry.lastError().text();
+   }
+   else {
+       qDebug() << "Deleted Staff";
+   }
+   */
+
    qry.prepare( "CREATE TABLE IF NOT EXISTS animals (id INTEGER UNIQUE PRIMARY KEY, type VARCHAR(30), breed VARCHAR(30), age VARCHAR(30), size VARCHAR(30), colour VARCHAR(30), weight VARCHAR(30))" );
    if( !qry.exec() )
        qDebug() << qry.lastError().text();
@@ -32,24 +49,60 @@ void database::initializeDatabase(QSqlDatabase db) {
    a.bindValue(":id", 1001);
    a.bindValue(":type", "Dog");
    a.bindValue(":breed", "Aussie");
-   a.bindValue(":age", "1 year");
+   a.bindValue(":age", "1");
    a.bindValue(":size", "Small");
    a.bindValue(":colour", "Black");
    a.bindValue(":weight", "20 lbs");
    if(!a.exec()) {
-       qDebug() << "Animal error: " << a.lastError();
+       qDebug() << "Animal error: " << a.lastError().text();
    }
 
    b.prepare("INSERT INTO animals (id, type, breed, age, size, colour, weight) VALUES (:id, :type, :breed, :age, :size, :colour, :weight)");
    b.bindValue(":id", 1002);
    b.bindValue(":type", "Cat");
    b.bindValue(":breed", "Persian");
-   b.bindValue(":age", "3 year");
+   b.bindValue(":age", "3");
    b.bindValue(":size", "Small");
    b.bindValue(":colour", "White");
    b.bindValue(":weight", "10 lbs");
    if(!b.exec()) {
-       qDebug() << "Animal error: " << b.lastError();
+       qDebug() << "Animal error: " << b.lastError().text();
+   }
+
+   a.prepare("INSERT INTO animals (id, type, breed, age, size, colour, weight) VALUES (:id, :type, :breed, :age, :size, :colour, :weight)");
+   a.bindValue(":id", 1003);
+   a.bindValue(":type", "Dog");
+   a.bindValue(":breed", "Poodle");
+   a.bindValue(":age", "7");
+   a.bindValue(":size", "Small");
+   a.bindValue(":colour", "Grey");
+   a.bindValue(":weight", "12 lbs");
+   if(!a.exec()) {
+       qDebug() << "Animal error: " << a.lastError().text();
+   }
+
+   b.prepare("INSERT INTO animals (id, type, breed, age, size, colour, weight) VALUES (:id, :type, :breed, :age, :size, :colour, :weight)");
+   b.bindValue(":id", 1004);
+   b.bindValue(":type", "Cat");
+   b.bindValue(":breed", "Russian Blue");
+   b.bindValue(":age", "3");
+   b.bindValue(":size", "Small");
+   b.bindValue(":colour", "White");
+   b.bindValue(":weight", "10 lbs");
+   if(!b.exec()) {
+       qDebug() << "Animal error: " << b.lastError().text();
+   }
+
+   b.prepare("INSERT INTO animals (id, type, breed, age, size, colour, weight) VALUES (:id, :type, :breed, :age, :size, :colour, :weight)");
+   b.bindValue(":id", 1005);
+   b.bindValue(":type", "Dog");
+   b.bindValue(":breed", "Golden Retriever");
+   b.bindValue(":age", "6");
+   b.bindValue(":size", "Large");
+   b.bindValue(":colour", "Gold");
+   b.bindValue(":weight", "50 lbs");
+   if(!b.exec()) {
+       qDebug() << "Animal error: " << b.lastError().text();
    }
 
    qry.prepare( "CREATE TABLE IF NOT EXISTS clients (ClientID INTEGER UNIQUE PRIMARY KEY, name VARCHAR(30), password VARCHAR(30))" );
@@ -69,10 +122,10 @@ void database::initializeDatabase(QSqlDatabase db) {
    //if no user has id 1000 add that staff.  This way there will always be at least one staff.  Ids start at 1000.
    qry.prepare("INSERT INTO staff (StaffID, name, password) VALUES (1000, 'Super', 'password')");
    if(!qry.exec()) {
-       qDebug() << "Staff already in system, no problem here. " << qry.lastError().text();
+       qDebug() << "Staff already in system, no problem here.";
    }
    else {
-       qDebug() << "Staff inserted!";
+       qDebug() << "Staff inserted to the staff table in database!";
    }
 }
 
@@ -145,8 +198,8 @@ void database::addAnimal(int id, QString type, QString breed, QString age, QStri
 void database::addStaff(int id, QString name, QString password) {
     QSqlQuery qry;
 
-    qry.prepare( "INSERT INTO staff (id, name, password)");
-    qry.bindValue(":id", id);
+    qry.prepare( "INSERT INTO staff (StaffID, name, password) VALUES (:id, :name, :password)");
+    qry.bindValue(":StaffID", id);
     qry.bindValue(":name", name);
     qry.bindValue(":password", password);
 
@@ -154,20 +207,28 @@ void database::addStaff(int id, QString name, QString password) {
         qDebug() << "Problem adding staff - " << qry.lastError().text();
         return;
     }
-    qDebug() << "Staff added to animals table";
+    qDebug() << "Staff added to staff table";
 }
 
-void database::deleteData() {
+void database::deleteDataAnimals() {
     QSqlQuery qry;
 
     qry.prepare("DELETE FROM animals");
     if(!qry.exec()) {
         qDebug() << "1  -"<< qry.lastError().text();
     }
+}
+void database::deleteDataStaff() {
+    QSqlQuery qry;
+
     qry.prepare("DELETE FROM staff");
     if(!qry.exec()) {
         qDebug() << "2 -- "<< qry.lastError().text();
     }
+}
+void database::deleteDataClients() {
+    QSqlQuery qry;
+
     qry.prepare("DELETE FROM clients");
     if( !qry.exec()) {
         qDebug() << "3 -- "<<qry.lastError().text();

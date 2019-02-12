@@ -5,11 +5,11 @@ Staff::Staff()
 
 }
 
-Staff::Staff(int id,QString name,QString password)
+Staff::Staff(int i,QString n,QString p)
 {
-    ID = id;
-    name = name;
-    password = password;
+    ID = i;
+    name = n;
+    password = p;
 }
 
 Staff::~Staff()

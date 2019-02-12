@@ -14,9 +14,11 @@ public:
     StaffControl(database*);
     void launch();
     void returnAllDataToDb();
+    StaffArray* test();
+    bool checkPassword(int, QString);
 private:
-    StaffArray* staffArray;
     database* db;
+    StaffArray* staffArray;
 };
 
 #endif // STAFFCONTROL_H

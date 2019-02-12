@@ -14,9 +14,13 @@ public:
     AnimalControl(database*);
     void launch();
     void returnAllDataToDb();
+    bool addAnimal(QString,QString,QString,QString,QString,QString);
+    int largestAnimalId;
+    AnimalArray* getAllAnimals();
 private:
     AnimalArray* animalArray;
     database* db;
+
 };
 
 #endif // ANIMALCONTROL_H
